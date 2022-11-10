@@ -8,6 +8,11 @@ class QueryParser {
   }
 
   void _parse() {
+    _tokenize();
+  
+  }
+
+  void _tokenize() {
     tokens = [];
     var tempTokens = query.split(RegExp(r"(,| )"));
     for(var tmp in tempTokens) {
@@ -19,6 +24,5 @@ class QueryParser {
 
       tokens.add(tmp);
     }
-
   }
 }
