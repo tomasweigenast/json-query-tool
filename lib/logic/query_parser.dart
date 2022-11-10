@@ -1,3 +1,5 @@
+import 'package:jsparser/jsparser.dart';
+
 const _kKeywords = ["SELECT", "WHERE", "LIMIT", "FROM", "ORDER", "BY"];
 const _kFilterKeywords = ["AND", "OR"];
 
@@ -16,7 +18,6 @@ class QueryParser {
 
   void _parse() {
     _tokenize();
-
     var tokens = List<String>.from(this.tokens);
     while(true) {
       try {
