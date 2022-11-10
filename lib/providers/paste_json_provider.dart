@@ -9,7 +9,7 @@ class PasteJsonProvider extends BaseViewModel {
   Future<bool> pasteJson(dynamic input, {bool isFile = false}) {
     return runBusyFuture(Future(() async {
       if(isFile) {
-        await compute<Stream<List<int>>, String>(_readFile, input as Stream<List<int>>);
+        input = await compute<Stream<List<int>>, String>(_readFile, input as Stream<List<int>>);
       }
       
       var context = JsonQueryContext.string(input as String);
